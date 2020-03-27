@@ -31,12 +31,12 @@ function HomeHeader() {
                     O nas
                 </li>
             </ScrollLink>
-            <ScrollLink to="" spy={true} smooth={true} offset={50} duration={500}>
+            <ScrollLink to="who-we_help_component" spy={true} smooth={true} offset={50} duration={500}>
                 <li>
                     Fundacja i organizacje
                 </li>
             </ScrollLink>
-            <ScrollLink to="" spy={true} smooth={true} offset={50} duration={500}>
+            <ScrollLink to="contact_component" spy={true} smooth={true} offset={50} duration={500}>
                 <li>
                     Kontakt
                 </li>

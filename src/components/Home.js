@@ -4,6 +4,8 @@ import HomeHeader from './HomeHeader';
 import HomeThreeColumns from './HomeThreeColumns';
 import SimpleSteps from './SimpleSteps';
 import AboutUs from './AboutUs';
+import WhoWeHelp from './WhoWeHelp';
+import Contact from './Contact';
 
 function Home() {
   return (
@@ -12,6 +14,8 @@ function Home() {
         <HomeThreeColumns />
         <SimpleSteps />
         <AboutUs />
+        <WhoWeHelp />
+        <Contact />
       </>
   );
 }
