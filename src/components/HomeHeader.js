@@ -26,7 +26,7 @@ function HomeHeader() {
                     O co chodzi?
                 </li>
             </ScrollLink>
-            <ScrollLink to="" spy={true} smooth={true} offset={50} duration={500}>
+            <ScrollLink to="about-us_component" spy={true} smooth={true} offset={50} duration={500}>
                 <li>
                     O nas
                 </li>

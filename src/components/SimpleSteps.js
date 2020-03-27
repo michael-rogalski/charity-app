@@ -20,25 +20,25 @@ function SimpleSteps() {
             <img src={Icon1} alt="Icon1" />
             <h3>Wybierz rzeczy</h3>
             <hr></hr>
-            <p>ubrania, zabawki, sprzęt i inne</p>
+            <p>ubrania, zabawki, <br/>sprzęt i inne</p>
           </div>
           <div className="pack-items">
             <img src={Icon2} alt="Icon2" />
             <h3>Spakuj je</h3>
             <hr></hr>
-            <p>skorzystaj z worków na śmieci</p>
+            <p>skorzystaj <br/>z worków na śmieci</p>
           </div>
           <div className="decide-who_help">
             <img src={Icon3} alt="Icon3" />
-            <h3>Zdecyduj komu chcesz pomóc</h3>
+            <h3>Zdecyduj komu <br/>chcesz pomóc</h3>
             <hr></hr>
-            <p>wybierz zaufane miejsce</p>
+            <p>wybierz zaufane <br/>miejsce</p>
           </div>
           <div className="order-courier">
             <img src={Icon4} alt="Icon4" />
             <h3>Zamów kuriera</h3>
             <hr></hr>
-            <p>kurier przyjedzie w dogodnym terminie</p>
+            <p>kurier przyjedzie <br/>w dogodnym terminie</p>
           </div>
         </div>
       </div>
