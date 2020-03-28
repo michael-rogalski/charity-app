@@ -1,3 +1,8 @@
+## Share your stuff
+
+A website to donate items which are no longer used but might appear useful to others.
+This project is based on a graphic design received from CodersLab and developed independently with a supervision of CodersLab's tutor.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
