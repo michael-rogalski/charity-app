@@ -233,7 +233,7 @@
 
     h3 {
       font-size: 18px;
-      font-weight: 400;
+      font-weight: 300;
     }
 
     hr {
@@ -305,7 +305,7 @@
         color: $color-darkgrey;
         font-weight: 300;
         letter-spacing: -0.76px;
-        line-height: 1.5;
+        line-height: 1.8;
       }
 
       .about-us_signature {
@@ -385,8 +385,45 @@
 
       p {
         font-size: 22px;
-        line-height: 1.3;
+        line-height: 1.5;
         color: $color-darkgrey;
+      }
+    }
+  }
+
+  .names {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 26px;
+    color: $color-darkgrey;
+    list-style: none;
+    padding: 0;
+    margin-top: 66px;
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18px;
+    color: $color-darkgrey;
+    list-style: none;
+    margin: 20px;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      text-align: center;
+      padding: 5px 10px;
+      margin: 5px;
+      // border: 0.75px solid #3c3c3c;
+
+      &:hover {
+        font-weight: 700;
+      }
+      .active {
+        border: 0.75px solid #3c3c3c;
       }
     }
   }
@@ -500,7 +537,7 @@
   .copyright {
     position: absolute;
     width: 100%;
-    top: 4900px;
+    top: 4920px;
 
     h6 {
       text-align: center;
