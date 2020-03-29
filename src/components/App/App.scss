@@ -411,7 +411,7 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      padding-bottom: 22px;
+      padding: 22px 0 22px 0;
       border-bottom: 0.75px solid $color-darkgrey;
   
         .organizations-names {
@@ -535,7 +535,7 @@
             border: none;
             border-bottom: 1px solid $color-darkgrey;
             width: 528px;
-            height: 250px;
+            height: 97px;
             outline: none;
             background-color: transparent;
             margin-top: 15px;
@@ -580,15 +580,28 @@
   }
 
   .copyright {
+    display: flex;
+    flex-direction: row;
     position: absolute;
     width: 100%;
-    top: 5050px;
+    top: 5100px;
 
     h6 {
-      text-align: center;
+      text-align: end;
       font-size: 18px;
       color: $color-darkgrey;
       font-weight: 400;
+      width: 56.5%;
+    }
+    .social-media_icons {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: 31%;
+      width: 70px;
+
+      img {
+        margin: auto;
+      }
     }
   }
 }

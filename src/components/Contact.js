@@ -1,6 +1,8 @@
 import React from 'react';
 import './App/App.scss';
 import Decoration from '../assets/Decoration.svg';
+import Facebook from '../assets/Facebook.svg';
+import Instagram from '../assets/Instagram.svg';
 import BackgroundContactForm from '../assets/Background-Contact-Form.jpg';
 import { Link } from 'react-router-dom';
 
@@ -35,6 +37,10 @@ function Contact() {
         </div>
         <div className="copyright">
             <h6>Copyright by Coders Lab</h6>
+            <div className="social-media_icons">
+                <img src={Facebook} alt="Facebook" />
+                <img src={Instagram} alt="Instagram" />
+            </div>
         </div>
     </div>
   );
