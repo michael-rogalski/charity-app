@@ -390,16 +390,61 @@
       }
     }
   }
-
-  .names {
+ 
+  .organizations-component {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    font-size: 26px;
-    color: $color-darkgrey;
-    list-style: none;
-    padding: 0;
-    margin-top: 66px;
+    width: 100%;
+
+    .names {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 26px;
+      color: $color-darkgrey;
+      list-style: none;
+      padding: 0;
+      margin-top: 66px;
+      width: 80%;
+
+    .organizations-component_inside {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-bottom: 22px;
+      border-bottom: 0.75px solid $color-darkgrey;
+  
+        .organizations-names {
+          display: flex;
+          flex-direction: column;
+  
+          h1 {
+            font-size: 26px;
+            color: $color-darkgrey;
+            font-weight: 300;
+          }
+    
+          span {
+            font-size: 18px;
+            color: $color-darkgrey;
+            font-weight: 300;
+            font-style: italic;
+          }
+        }
+
+        .organizations-tags {
+          display: flex;
+          justify-content: flex-end;
+          // width: 100%;
+
+          h5 {
+            font-size: 18px;
+            color: $color-darkgrey;
+            font-weight: 300;
+          }
+        }
+      }
+    }
   }
 
   .pagination {
@@ -436,8 +481,6 @@
   .contact_info_section {
     display: flex;
     position: absolute;
-    top: 4054px;
-    left: 0px;
 
     .contact_info_section_inside {
       position: absolute;
@@ -478,6 +521,7 @@
             border-bottom: 1px solid $color-darkgrey;
             width: 256px;
             outline: none;
+            margin-top: 15px;
           }
         }
 
@@ -494,6 +538,7 @@
             height: 250px;
             outline: none;
             background-color: transparent;
+            margin-top: 15px;
           }
         }
 
@@ -537,12 +582,13 @@
   .copyright {
     position: absolute;
     width: 100%;
-    top: 4920px;
+    top: 5050px;
 
     h6 {
       text-align: center;
       font-size: 18px;
       color: $color-darkgrey;
+      font-weight: 400;
     }
   }
 }
