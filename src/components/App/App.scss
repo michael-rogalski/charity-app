@@ -21,13 +21,17 @@
       list-style: none;
       margin-left: 77%;
 
-      li {
+      button {
         padding: 9px 20px;
         cursor: pointer;
         border: 0.75px solid $color-white;
 
         &:hover {
           border: 0.75px solid $color-yellow;
+        }
+        &:active {
+          outline: none;
+          border: 1.5px solid $color-yellow;
         }
       }
 
@@ -54,12 +58,17 @@
       margin-right: 5%;
       list-style: none;
 
-      li {
-        padding: 9px 20px;
-        cursor: pointer;
+      a {
+        text-decoration: none;
+        color: $color-darkgrey;
 
-        &:hover {
-          border: 0.75px solid $color-darkgrey;
+        li {
+          padding: 9px 20px;
+          cursor: pointer;
+  
+          &:hover {
+            border: 0.75px solid $color-darkgrey;
+          }
         }
       }
     }
@@ -97,7 +106,7 @@
       margin-top: 65px;
       margin: auto;
 
-      p {
+      button {
         text-align: center;
         font-size: 30px;
         font-weight: 300;
@@ -108,10 +117,12 @@
         color: $color-darkgrey;
         border: 0.75px solid $color-darkgrey;
         padding: 16px 50px;
-      }
+        cursor: pointer;
 
-      a {
-        text-decoration: none;
+        &:active {
+          outline: none;
+          border: 1.5px solid $color-darkgrey;
+        }
       }
     }
   }
@@ -522,6 +533,7 @@
             width: 256px;
             outline: none;
             margin-top: 15px;
+            opacity: 0.5;
           }
         }
 
@@ -539,6 +551,7 @@
             outline: none;
             background-color: transparent;
             margin-top: 15px;
+            opacity: 0.5;
           }
         }
 
@@ -602,6 +615,92 @@
       img {
         margin: auto;
       }
+    }
+  }
+}
+
+.login-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 123px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .login-form_component {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 60px;
+    background-color: $color-white;
+
+    .login-form_inside {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      .login-form_email {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 67px 15px 67px;
+      }
+
+      .login-form_password {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 67px 40px 67px;
+      }
+
+      input[type=text],
+      input[type=password] {
+        border: none;
+        border-bottom: 1px solid $color-darkgrey;
+        outline: none;
+        background-color: $color-white;
+        margin-top: 15px;
+        width: 250px;
+        // -webkit-background-color: red !important;
+      }
+      // input:-webkit-autofill {
+      //   background-color: red !important;
+      // }
+    }
+  }
+
+  .login-form_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 40px;
+
+    button {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 1.3;
+      color: $color-darkgrey;
+      border: 0.75px solid $color-darkgrey;
+      padding: 13px 15px;
+      cursor: pointer;
+
+      &:active {
+        outline: none;
+        border: 1.5px solid $color-darkgrey;
+      }
+    }
+
+    .login-form_button_registration {
+      margin: 0 139px 0 0;
+    }
+
+    .login-form_button_login {
+      margin: 0 0 0 139px;
     }
   }
 }
