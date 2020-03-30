@@ -797,3 +797,43 @@
     }
   }
 }
+
+
+
+.logout-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 123px;
+
+  h1 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .logout-form_buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 35px;
+    background-color: $color-white;
+
+    button {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 1.3;
+      color: $color-darkgrey;
+      border: 0.75px solid $color-darkgrey;
+      padding: 13px 15px;
+      cursor: pointer;
+      
+      &:active {
+        outline: none;
+        border: 1.5px solid $color-darkgrey;
+      }
+    }
+  }
+}

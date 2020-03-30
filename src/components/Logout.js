@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Link as ScrollLink } from "react-scroll";
 import Decoration from '../assets/Decoration.svg';
 
-function Registration() {
+function Logout() {
     return (
         <div className="home-header">
             <div className="login">
@@ -43,36 +43,15 @@ function Registration() {
                     </Link>
                 </ul>
             </nav>
-            <div className="register-component">
-                <h1>Załóż konto</h1>
+            <div className="logout-component">
+                <h1>Wylogowanie nastąpiło<br/>pomyślnie!</h1>
                 <img src={Decoration} alt="Decoration" />
-                <div className="register-form_component">
-                    <div className="register-form_inside">
-                        <div className="register-form_email">
-                            <label>Email</label>
-                            <input type="text"></input>
-                        </div>
-                        <div className="register-form_password">
-                            <label>Hasło</label>
-                            <input type="password"></input>
-                        </div>
-                        <div className="register-form_repassword">
-                            <label>Powtórz hasło</label>
-                            <input type="password"></input>
-                        </div>
-                    </div>
-                </div>
-                <div className="register-form_buttons">
-                    <div className="register-form_button_registration">
-                        <Link to="/logowanie"><button>Zaloguj się</button></Link>
-                    </div>
-                    <div className="register-form_button_login">
-                        <Link to="/rejestracja"><button>Załóż konto</button></Link>
-                    </div>
+                <div className="logout-form_buttons">
+                    <Link to="/"><button>Strona główna</button></Link>
                 </div>
             </div>
         </div>
     );
 }
 
-export default Registration;
+export default Logout;
