@@ -43,27 +43,31 @@ function Login() {
                     </Link>
                 </ul>
             </nav>
-            <div className="login-component">
-                <h1>Zaloguj się</h1>
+            <div className="register-component">
+                <h1>Załóż konto</h1>
                 <img src={Decoration} alt="Decoration" />
-                <div className="login-form_component">
-                    <div className="login-form_inside">
-                        <div className="login-form_email">
+                <div className="register-form_component">
+                    <div className="register-form_inside">
+                        <div className="register-form_email">
                             <label>Email</label>
                             <input type="text"></input>
                         </div>
-                        <div className="login-form_password">
+                        <div className="register-form_password">
                             <label>Hasło</label>
+                            <input type="password"></input>
+                        </div>
+                        <div className="register-form_repassword">
+                            <label>Powtórz hasło</label>
                             <input type="password"></input>
                         </div>
                     </div>
                 </div>
-                <div className="login-form_buttons">
-                    <div className="login-form_button_registration">
-                        <Link to="/rejestracja"><button>Załóż konto</button></Link>
-                    </div>
-                    <div className="login-form_button_login">
+                <div className="register-form_buttons">
+                    <div className="register-form_button_registration">
                         <Link to="/logowanie"><button>Zaloguj się</button></Link>
+                    </div>
+                    <div className="register-form_button_login">
+                        <Link to="/rejestracja"><button>Załóż konto</button></Link>
                     </div>
                 </div>
             </div>
