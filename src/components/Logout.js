@@ -1,8 +1,6 @@
 import React from 'react';
 import './App/App.scss';
-import Home from './Home';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { Link as ScrollLink } from "react-scroll";
+import { Link } from 'react-router-dom';
 import Decoration from '../assets/Decoration.svg';
 
 function Logout() {

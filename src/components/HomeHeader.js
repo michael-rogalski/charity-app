@@ -5,8 +5,6 @@ import { Link as ScrollLink } from "react-scroll";
 import Decoration from '../assets/Decoration.svg';
 import HomeHeroImage from '../assets/Home-Hero-Image.jpg';
 
-import Login from './Login';
-
 function HomeHeader() {
   return (
       <div className="home-header">
