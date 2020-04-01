@@ -360,6 +360,10 @@
     align-items: center;
     margin: auto;
 
+    .buttonTrue {
+      border: 0.75px solid $color-darkgrey;
+    }
+
     :nth-child(1) {
       padding: 30px 50px 30px 50px;
     }
@@ -471,16 +475,17 @@
     li {
       cursor: pointer;
       text-align: center;
-      padding: 5px 10px;
-      margin: 5px;
-      // border: 0.75px solid #3c3c3c;
+      padding: 5px 8px;
+      margin: 0 10px;
 
       &:hover {
         font-weight: 700;
       }
-      .active {
-        border: 0.75px solid #3c3c3c;
-      }
+    }
+
+    .activePageTrue {
+      border: 0.75px solid #3c3c3c;
+      font-weight: 700;
     }
   }
 }
@@ -534,6 +539,8 @@
           color: red;
           font-weight: 400;
           text-align: center;
+          margin-top: 10px;
+          text-align: start;
         }
 
         .contact-form_name_and_email {
@@ -568,6 +575,15 @@
             margin-top: 15px;
             opacity: 0.5;
           }
+
+          .error {
+            font-size: 13px;
+            color: red;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 10px;
+            text-align: start;
+          }
         }
 
           .contact-form_button {
@@ -587,6 +603,7 @@
               color: $color-darkgrey;
               border: 0.75px solid $color-darkgrey;
               padding: 13px 52px;
+              cursor: pointer;
             }
       
             a {

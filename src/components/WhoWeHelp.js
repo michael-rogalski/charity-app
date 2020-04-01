@@ -9,28 +9,25 @@ class Pagination extends Component {
             names: this.props.data,
             currentPage: 1,
             namesPerPage: 3,
-            // border: ""
+            activePage: false
         }
-        console.log(this.state);
     }
 
     handleClick = (event, i) => {
         this.setState({
             currentPage: i,
-            // border: "0.75px solid #3c3c3c"
+            activePage: true
         })
     };
 
     render() {
-        const { names, currentPage, namesPerPage } = this.state;
-
-        console.log(names);
+        const { currentPage, namesPerPage } = this.state;
 
         const indexOfLast = currentPage * namesPerPage;
         const indexOfFirst = indexOfLast - namesPerPage;
-        const currentNames = names.slice(indexOfFirst, indexOfLast);
+        const currentNames = this.props.data.slice(indexOfFirst, indexOfLast);
 
-        const elements = currentNames.map((org) => {
+        const elements = currentNames.map((org, i) => {
             return (
                 <>
                 <div className="organizations-component_inside">
@@ -47,8 +44,8 @@ class Pagination extends Component {
         });
 
         const pageNumbers = [];
-        for (let i = 1; i <= Math.ceil(names.length / namesPerPage); i++) {
-            const element = <li key={i}
+        for (let i = 1; i <= Math.ceil(this.props.data.length / namesPerPage); i++) {
+            const element = <li className={this.state.activePage ? "activePageTrue" : "activePageFalse"} key={i}
                 onClick={e => this.handleClick(e,i)}
                 // style={{border:this.state.border}}
                 >
@@ -57,16 +54,18 @@ class Pagination extends Component {
             pageNumbers.push(element)
         }
 
-        return <section>
-            <div className="organizations-component">
-                <ul className="names">
-                    {elements}
+        return (
+            <section>
+                <div className="organizations-component">
+                    <ul className="names">
+                        {elements}
+                    </ul>
+                </div>
+                <ul className="pagination">
+                    {pageNumbers}
                 </ul>
-            </div>
-            <ul className="pagination">
-                {pageNumbers}
-            </ul>
-        </section>
+            </section>
+        )
     }
 };
 
@@ -75,14 +74,41 @@ class WhoWeHelp extends Component {
     constructor() {
         super();
         this.state = {
-            userSelection: "Foundations"
+            userSelection: "Foundations",
+            button1: true,
+            button2: false,
+            button3: false
         }
-        console.log(this.state)
+        // this.updateStyles = this.updateStyles.bind(this);
     }
 
     updateUserSelection = newSelection => {
         this.setState({
             userSelection: newSelection
+        });
+    }
+
+    updateButtonOne = () => {
+        this.setState({
+            button1: true,
+            button2: false,
+            button3: false
+        });
+    }
+
+    updateButtonTwo = () => {
+        this.setState({
+            button1: false,
+            button2: true,
+            button3: false
+        });
+    }
+
+    updateButtonThree = () => {
+        this.setState({
+            button1: false,
+            button2: false,
+            button3: true
         });
     }
 
@@ -193,8 +219,6 @@ class WhoWeHelp extends Component {
         } else if (this.state.userSelection === "LocalCollections") {
             selected = LocalCollections;
         }
-
-        console.log(selected)
         
         return (
             <div className="who-we_help_component">
@@ -203,14 +227,17 @@ class WhoWeHelp extends Component {
                     <img src={Decoration} alt="Decoration" />
                 </div>
                 <div className="choice-buttons">
-                    <p onClick={() => {
+                    <p className={this.state.button1 ? "buttonTrue" : "buttonFalse"} onClick={() => {
                         this.updateUserSelection("Foundations")
+                        this.updateButtonOne()
                     }}>Fundacjom</p>
-                    <p onClick={() => {
+                    <p className={this.state.button2 ? "buttonTrue" : "buttonFalse"} onClick={() => {
                         this.updateUserSelection("Organizations")
+                        this.updateButtonTwo()
                     }}>Organizacjom <br />pozarządowym</p>
-                    <p onClick={() => {
+                    <p className={this.state.button3 ? "buttonTrue" : "buttonFalse"} onClick={() => {
                         this.updateUserSelection("LocalCollections")
+                        this.updateButtonThree()
                     }}>Lokalnym <br />zbiórkom</p>
                 </div>
                 <div className="who-we_help_text">
