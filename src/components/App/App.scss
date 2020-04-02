@@ -780,6 +780,15 @@
       flex-direction: column;
       text-align: start;
 
+      .error {
+        font-size: 13px;
+        color: red;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 10px;
+        text-align: start;
+      }
+
       .register-form_email {
         display: flex;
         flex-direction: column;
@@ -799,7 +808,8 @@
       }
 
       input[type=text],
-      input[type=password] {
+      input[type=password],
+      input[type=prepassword]{
         border: none;
         border-bottom: 1px solid $color-darkgrey;
         outline: none;
