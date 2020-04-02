@@ -8,15 +8,13 @@ class Pagination extends Component {
         this.state = {
             names: this.props.data,
             currentPage: 1,
-            namesPerPage: 3,
-            activePage: false
+            namesPerPage: 3
         }
     }
 
     handleClick = (event, i) => {
         this.setState({
-            currentPage: i,
-            // activePage: true
+            currentPage: i
         })
     };
 
@@ -42,12 +40,15 @@ class Pagination extends Component {
                 </>
             )
         });
-
+        
         const pageNumbers = [];
+        
         for (let i = 1; i <= Math.ceil(this.props.data.length / namesPerPage); i++) {
-            const element = <li key={i}
-                onClick={e => this.handleClick(e,i)}
-                style={{border:this.state.border}}
+            
+            const element = <li 
+                className={(i === currentPage) ? "active-page" : "inactive-page"} 
+                key={i}
+                onClick={ e => this.handleClick(e,i) }
                 >
                 {i}
             </li>
@@ -78,8 +79,7 @@ class WhoWeHelp extends Component {
             button1: true,
             button2: false,
             button3: false
-        }
-        // this.updateStyles = this.updateStyles.bind(this);
+        };
     }
 
     updateUserSelection = newSelection => {

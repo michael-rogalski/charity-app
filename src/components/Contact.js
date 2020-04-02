@@ -26,8 +26,6 @@ class Contact extends Component {
             return false;
         }
 
-        console.log(this.state.theName, this.state.email, this.state.textarea);
-
         fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
             method: "POST",
             body: JSON.stringify({
@@ -44,12 +42,12 @@ class Contact extends Component {
                 console.log("Success:", data);
                 this.setState({ isFormClicked: true });
             })
-            // .catch((error) => {
-            //     if (error.status == 'error') {
-            //         return false;
-            //     };
-            //     console.error("Error:", error);
-            // });
+            .catch((error) => {
+                if (error.status === 'error') {
+                    return false;
+                };
+                console.error("Error:", error);
+            });
     };
 
     onNameInputChange = e => {
@@ -72,9 +70,11 @@ class Contact extends Component {
 
     isFormValid = () => {
         const { theName, email, textarea } = this.state;
+
         const isNameValid = theName.length >= 2 && !theName.includes(" ");
         const isEmailValid = email.includes("@") && email.length >= 3;
-        const isTextareaValid = textarea.length >= 5;
+        const isTextareaValid = textarea.length >= 120;
+
         this.setState({ isNameValid, isTextareaValid, isEmailValid });
         return isNameValid && isTextareaValid && isEmailValid
     };

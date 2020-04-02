@@ -66,8 +66,9 @@ class Registration extends Component {
 
     isLoginValid = () => {
         const { email, password, prepassword } = this.state;
+
         const isEmailValid = email.includes("@") && email.length >= 3;
-        const isPasswordValid = password.length >= 5;
+        const isPasswordValid = password.length >= 6;
         const isPrePasswordValid = prepassword === password;
 
         this.setState({ isEmailValid, isPasswordValid, isPrePasswordValid });

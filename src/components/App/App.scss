@@ -477,15 +477,16 @@
       text-align: center;
       padding: 5px 8px;
       margin: 0 10px;
-
-      &:hover {
-        font-weight: 700;
-      }
     }
 
     .active-page {
       border: 0.75px solid #3c3c3c;
-      font-weight: 700;
+    }
+
+    .inactive-page {
+      &:hover {
+        font-weight: 700;
+      }
     }
   }
 }

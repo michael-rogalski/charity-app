@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App/App.scss';
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Decoration from '../assets/Decoration.svg';
 
@@ -58,8 +57,9 @@ class Login extends Component {
 
     isLoginValid = () => {
         const { email, password } = this.state;
+
         const isEmailValid = email.includes("@") && email.length >= 3;
-        const isPasswordValid = password.length >= 5;
+        const isPasswordValid = password.length >= 6;
 
         this.setState({ isEmailValid, isPasswordValid });
         return isEmailValid && isPasswordValid
