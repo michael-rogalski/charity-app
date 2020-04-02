@@ -360,7 +360,7 @@
     align-items: center;
     margin: auto;
 
-    .buttonTrue {
+    .active-button {
       border: 0.75px solid $color-darkgrey;
     }
 
@@ -483,7 +483,7 @@
       }
     }
 
-    .activePageTrue {
+    .active-page {
       border: 0.75px solid #3c3c3c;
       font-weight: 700;
     }
@@ -507,12 +507,12 @@
       left: 1000px;
       top: 150px;
 
-      #result {
-        font-size: 24px;
-        color: red;
-        font-weight: 600;
-
+      .contact-success_message {
+        font-size: 20px;
+        color: green;
+        font-weight: 400;
         text-align: center;
+        margin-bottom: -50px;
       }
 
       h1 {
@@ -644,6 +644,10 @@
       margin-left: 31%;
       width: 70px;
 
+      :nth-child(1) {
+        margin-right: 20px;
+      }
+
       img {
         margin: auto;
       }
@@ -675,6 +679,15 @@
       flex-direction: column;
       text-align: start;
 
+      .error {
+        font-size: 13px;
+        color: red;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 10px;
+        text-align: start;
+      }
+
       .login-form_email {
         display: flex;
         flex-direction: column;
@@ -685,6 +698,15 @@
         display: flex;
         flex-direction: column;
         margin: 15px 67px 40px 67px;
+
+        .error {
+          font-size: 13px;
+          color: red;
+          font-weight: 400;
+          text-align: center;
+          margin-top: 10px;
+          text-align: start;
+        }
       }
 
       input[type=text],
@@ -695,11 +717,7 @@
         background-color: $color-white;
         margin-top: 15px;
         width: 250px;
-        // -webkit-background-color: red !important;
       }
-      // input:-webkit-autofill {
-      //   background-color: red !important;
-      // }
     }
   }
 

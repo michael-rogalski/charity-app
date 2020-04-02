@@ -16,7 +16,7 @@ class Pagination extends Component {
     handleClick = (event, i) => {
         this.setState({
             currentPage: i,
-            activePage: true
+            // activePage: true
         })
     };
 
@@ -45,9 +45,9 @@ class Pagination extends Component {
 
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(this.props.data.length / namesPerPage); i++) {
-            const element = <li className={this.state.activePage ? "activePageTrue" : "activePageFalse"} key={i}
+            const element = <li key={i}
                 onClick={e => this.handleClick(e,i)}
-                // style={{border:this.state.border}}
+                style={{border:this.state.border}}
                 >
                 {i}
             </li>
@@ -227,15 +227,15 @@ class WhoWeHelp extends Component {
                     <img src={Decoration} alt="Decoration" />
                 </div>
                 <div className="choice-buttons">
-                    <p className={this.state.button1 ? "buttonTrue" : "buttonFalse"} onClick={() => {
+                    <p className={this.state.button1 ? "active-button" : "inactive-button"} onClick={() => {
                         this.updateUserSelection("Foundations")
                         this.updateButtonOne()
                     }}>Fundacjom</p>
-                    <p className={this.state.button2 ? "buttonTrue" : "buttonFalse"} onClick={() => {
+                    <p className={this.state.button2 ? "active-button" : "inactive-button"} onClick={() => {
                         this.updateUserSelection("Organizations")
                         this.updateButtonTwo()
                     }}>Organizacjom <br />pozarządowym</p>
-                    <p className={this.state.button3 ? "buttonTrue" : "buttonFalse"} onClick={() => {
+                    <p className={this.state.button3 ? "active-button" : "inactive-button"} onClick={() => {
                         this.updateUserSelection("LocalCollections")
                         this.updateButtonThree()
                     }}>Lokalnym <br />zbiórkom</p>
