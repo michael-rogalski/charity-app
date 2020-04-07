@@ -79,31 +79,11 @@ class Login extends Component {
                 </div>
                 <nav>
                     <ul>
-                        <Link to="/">
-                            <li>
-                                Start
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                O co chodzi?
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                O nas
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                Fundacja i organizacje
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                Kontakt
-                    </li>
-                        </Link>
+                        <Link to="/"><li>Start</li></Link>
+                        <Link to="/"><li>O co chodzi?</li></Link>
+                        <Link to="/"><li>O nas</li></Link>
+                        <Link to="/"><li>Fundacja i organizacje</li></Link>
+                        <Link to="/"><li>Kontakt</li></Link>
                     </ul>
                 </nav>
                 <div className="login-component">
@@ -117,8 +97,7 @@ class Login extends Component {
                                     type="text"
                                     name="email"
                                     value={email}
-                                    onChange={this.onEmailInputChange}
-                                />
+                                    onChange={this.onEmailInputChange} />
                                 <p className="error">{!this.state.isEmailValid && <span>Podany email jest nieprawidłowy!</span>}</p>
                             </div>
                             <div className="login-form_password">
@@ -127,18 +106,23 @@ class Login extends Component {
                                     type="password"
                                     name="password"
                                     value={password}
-                                    onChange={this.onPasswordInputChange}
-                                />
+                                    onChange={this.onPasswordInputChange} />
                                 <p className="error">{!this.state.isPasswordValid && <span>Podane hasło jest za krótkie!</span>}</p>
                             </div>
                         </form>
                     </div>
                     <div className="login-form_buttons">
                         <div className="login-form_button_registration">
-                            <Link to="/rejestracja"><button>Załóż konto</button></Link>
+                            <Link to="/rejestracja">
+                                <button>Załóż konto</button>
+                            </Link>
                         </div>
                         <div className="login-form_button_login">
-                            <button type="submit" onClick={this.onClickSubmit}>Zaloguj się</button>
+                            <button 
+                                type="submit" 
+                                onClick={this.onClickSubmit}>
+                                Zaloguj się
+                            </button>
                         </div>
                     </div>
                 </div>

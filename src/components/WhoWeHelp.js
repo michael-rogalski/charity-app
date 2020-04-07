@@ -2,74 +2,6 @@ import React, { Component } from 'react';
 import './App/App.scss';
 import Decoration from '../assets/Decoration.svg';
 
-class Pagination extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            names: this.props.data,
-            currentPage: 1,
-            namesPerPage: 3
-        }
-    }
-
-    handleClick = (event, i) => {
-        this.setState({
-            currentPage: i
-        })
-    };
-
-    render() {
-        const { currentPage, namesPerPage } = this.state;
-
-        const indexOfLast = currentPage * namesPerPage;
-        const indexOfFirst = indexOfLast - namesPerPage;
-        const currentNames = this.props.data.slice(indexOfFirst, indexOfLast);
-
-        const elements = currentNames.map((org, i) => {
-            return (
-                <>
-                <div className="organizations-component_inside">
-                    <div className="organizations-names">
-                        <h1> {org.name} </h1>
-                        <span> {org.description}</span>
-                    </div>
-                    <div className="organizations-tags">
-                        <h5> {org.tags}</h5>
-                    </div>
-                </div>
-                </>
-            )
-        });
-        
-        const pageNumbers = [];
-        
-        for (let i = 1; i <= Math.ceil(this.props.data.length / namesPerPage); i++) {
-            
-            const element = <li 
-                className={(i === currentPage) ? "active-page" : "inactive-page"} 
-                key={i}
-                onClick={ e => this.handleClick(e,i) }
-                >
-                {i}
-            </li>
-            pageNumbers.push(element)
-        }
-
-        return (
-            <section>
-                <div className="organizations-component">
-                    <ul className="names">
-                        {elements}
-                    </ul>
-                </div>
-                <ul className="pagination">
-                    {pageNumbers}
-                </ul>
-            </section>
-        )
-    }
-};
-
 class WhoWeHelp extends Component {
 
     constructor() {
@@ -78,41 +10,51 @@ class WhoWeHelp extends Component {
             userSelection: "Foundations",
             button1: true,
             button2: false,
-            button3: false
+            button3: false,
+            currentPage: 1,
+            namesPerPage: 3
         };
     }
 
-    updateUserSelection = newSelection => {
+    updateButtonOne = newSelection => {
         this.setState({
+            button1: true,
+            button2: false,
+            button3: false,
+            currentPage: 1,
             userSelection: newSelection
         });
     }
 
-    updateButtonOne = () => {
-        this.setState({
-            button1: true,
-            button2: false,
-            button3: false
-        });
-    }
-
-    updateButtonTwo = () => {
+    updateButtonTwo = newSelection => {
         this.setState({
             button1: false,
             button2: true,
-            button3: false
+            button3: false,
+            currentPage: 1,
+            userSelection: newSelection
         });
     }
 
-    updateButtonThree = () => {
+    updateButtonThree = newSelection => {
         this.setState({
             button1: false,
             button2: false,
-            button3: true
+            button3: true,
+            currentPage: 1,
+            userSelection: newSelection
         });
     }
 
+    handleClick = (e, i) => {
+        this.setState({
+            currentPage: i
+        })
+    };
+
     render() {
+
+        const { currentPage, namesPerPage } = this.state;
 
         const Foundations = {
             description: "W naszej bazie znajdziesz listę zweryfikowanych fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.",
@@ -212,14 +154,44 @@ class WhoWeHelp extends Component {
 
         let selected;
 
-        if(this.state.userSelection === "Organizations"){
+        if (this.state.userSelection === "Organizations") {
             selected = Organizations;
         } else if (this.state.userSelection === "Foundations") {
             selected = Foundations;
         } else if (this.state.userSelection === "LocalCollections") {
             selected = LocalCollections;
         }
-        
+
+        const indexOfLast = currentPage * namesPerPage;
+        const indexOfFirst = indexOfLast - namesPerPage;
+        const currentNames = selected.data.slice(indexOfFirst, indexOfLast);
+
+        const elements = currentNames.map((org, i) => {
+            return (
+                <div key={i} className="organizations-component_inside">
+                    <div className="organizations-names">
+                        <h1> {org.name} </h1>
+                        <span> {org.description}</span>
+                    </div>
+                    <div className="organizations-tags">
+                        <h5> {org.tags}</h5>
+                    </div>
+                </div>
+            )
+        });
+
+        const pageNumbers = [];
+
+        for (let i = 1; i <= Math.ceil(selected.data.length / namesPerPage); i++) {
+
+            const element = <li className={(i === currentPage) ? "active-page" : "inactive-page"} key={i}
+                onClick={e => this.handleClick(e, i)}>
+                {i}
+            </li>
+
+            pageNumbers.push(element)
+        }
+
         return (
             <div className="who-we_help_component">
                 <div className="who-we_help_title">
@@ -227,25 +199,30 @@ class WhoWeHelp extends Component {
                     <img src={Decoration} alt="Decoration" />
                 </div>
                 <div className="choice-buttons">
-                    <p className={this.state.button1 ? "active-button" : "inactive-button"} onClick={() => {
-                        this.updateUserSelection("Foundations")
-                        this.updateButtonOne()
-                    }}>Fundacjom</p>
-                    <p className={this.state.button2 ? "active-button" : "inactive-button"} onClick={() => {
-                        this.updateUserSelection("Organizations")
-                        this.updateButtonTwo()
-                    }}>Organizacjom <br />pozarządowym</p>
-                    <p className={this.state.button3 ? "active-button" : "inactive-button"} onClick={() => {
-                        this.updateUserSelection("LocalCollections")
-                        this.updateButtonThree()
-                    }}>Lokalnym <br />zbiórkom</p>
+                    <button className={this.state.button1 ? "active-button" : "inactive-button"}
+                        onClick={() => { this.updateButtonOne("Foundations") }}>Fundacjom</button>
+                    <button className={this.state.button2 ? "active-button" : "inactive-button"}
+                        onClick={() => { this.updateButtonTwo("Organizations") }}>Organizacjom <br />pozarządowym
+                    </button>
+                    <button className={this.state.button3 ? "active-button" : "inactive-button"}
+                        onClick={() => { this.updateButtonThree("LocalCollections") }}>Lokalnym <br />zbiórkom
+                    </button>
                 </div>
                 <div className="who-we_help_text">
                     <div className="who-we_help_text_inside">
                         <p>{selected.description}</p>
                     </div>
                 </div>
-                <Pagination data={selected.data} />
+                <section>
+                    <div className="organizations-component">
+                        <ul className="names">
+                            {elements}
+                        </ul>
+                    </div>
+                    <ul className="pagination">
+                        {pageNumbers}
+                    </ul>
+                </section>
             </div>
         );
     }

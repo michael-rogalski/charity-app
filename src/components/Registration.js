@@ -89,31 +89,11 @@ class Registration extends Component {
                 </div>
                 <nav>
                     <ul>
-                        <Link to="/">
-                            <li>
-                                Start
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                O co chodzi?
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                O nas
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                Fundacja i organizacje
-                    </li>
-                        </Link>
-                        <Link to="/">
-                            <li>
-                                Kontakt
-                    </li>
-                        </Link>
+                        <Link to="/"><li>Start</li></Link>
+                        <Link to="/"><li>O co chodzi?</li></Link>
+                        <Link to="/"><li>O nas</li></Link>
+                        <Link to="/"><li>Fundacja i organizacje</li></Link>
+                        <Link to="/"><li>Kontakt</li></Link>
                     </ul>
                 </nav>
                 <div className="register-component">
@@ -127,8 +107,7 @@ class Registration extends Component {
                                     type="text"
                                     name="email"
                                     value={email}
-                                    onChange={this.onEmailInputChange}
-                                />
+                                    onChange={this.onEmailInputChange} />
                                 <p className="error">{!this.state.isEmailValid && <span>Podany email jest nieprawidłowy!</span>}</p>
                             </div>
                             <div className="register-form_password">
@@ -137,8 +116,7 @@ class Registration extends Component {
                                     type="password"
                                     name="password"
                                     value={password}
-                                    onChange={this.onPasswordInputChange}
-                                />
+                                    onChange={this.onPasswordInputChange} />
                                 <p className="error">{!this.state.isPasswordValid && <span>Podane hasło jest za krótkie!</span>}</p>
                             </div>
                             <div className="register-form_repassword">
@@ -147,8 +125,7 @@ class Registration extends Component {
                                     type="password"
                                     name="prepassword"
                                     value={prepassword}
-                                    onChange={this.onPrePasswordInputChange}
-                                />
+                                    onChange={this.onPrePasswordInputChange} />
                                 <p className="error">{!this.state.isPrePasswordValid && <span>Podane hasło nie jest takie samo!</span>}</p>
                             </div>
                         </form>
@@ -158,7 +135,11 @@ class Registration extends Component {
                             <Link to="/logowanie"><button>Zaloguj się</button></Link>
                         </div>
                         <div className="register-form_button_login">
-                            <button type="submit" onClick={this.onClickSubmit}>Załóż konto</button>
+                            <button 
+                                type="submit" 
+                                onClick={this.onClickSubmit}>
+                                Załóż konto
+                            </button>
                         </div>
                     </div>
                 </div>

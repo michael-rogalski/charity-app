@@ -81,6 +81,7 @@ class Contact extends Component {
 
     render() {
         const { theName, email, textarea } = this.state;
+
         return (
             <div className="contact_component">
                 <div className="contact_info_section">
@@ -102,8 +103,7 @@ class Contact extends Component {
                                         name="name"
                                         value={theName}
                                         placeholder="Krzysztof"
-                                        onChange={this.onNameInputChange}
-                                    />
+                                        onChange={this.onNameInputChange} />
                                     <p className="error">{!this.state.isNameValid && <span>Podane imię jest nieprawidłowe!</span>}</p>
                                 </label>
                                 <label>Wpisz swój email
@@ -112,8 +112,7 @@ class Contact extends Component {
                                         name="email"
                                         value={email}
                                         placeholder="abc@xyz.pl"
-                                        onChange={this.onEmailInputChange}
-                                    />
+                                        onChange={this.onEmailInputChange} />
                                     <p className="error">{!this.state.isEmailValid && <span>Podany email jest nieprawidłowy!</span>}</p>
                                 </label>
                             </div>
@@ -124,12 +123,15 @@ class Contact extends Component {
                                     name="textarea"
                                     value={textarea}
                                     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                                    onChange={this.onTextareaChange}
-                                />
+                                    onChange={this.onTextareaChange} />
                                 <p className="error">{!this.state.isTextareaValid && <span>Wiadomość musi mieć conajmniej 120 znaków!</span>}</p>
                             </div>
                             <div className="contact-form_button">
-                                <button type="submit" onClick={this.onClickSubmit}>Wyślij</button>
+                                <button 
+                                    type="submit" 
+                                    onClick={this.onClickSubmit}>
+                                    Wyślij
+                                </button>
                             </div>
                         </div>
                     </form>

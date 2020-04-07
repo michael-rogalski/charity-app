@@ -15,29 +15,19 @@ function Logout() {
             <nav>
                 <ul>
                     <Link to="/">
-                        <li>
-                            Start
-                    </li>
+                        <li>Start</li>
                     </Link>
                     <Link to="/">
-                        <li>
-                            O co chodzi?
-                    </li>
+                        <li>O co chodzi?</li>
                     </Link>
                     <Link to="/">
-                        <li>
-                            O nas
-                    </li>
+                        <li>O nas</li>
                     </Link>
                     <Link to="/">
-                        <li>
-                            Fundacja i organizacje
-                    </li>
+                        <li>Fundacja i organizacje</li>
                     </Link>
                     <Link to="/">
-                        <li>
-                            Kontakt
-                    </li>
+                        <li>Kontakt</li>
                     </Link>
                 </ul>
             </nav>

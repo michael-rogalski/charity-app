@@ -368,7 +368,13 @@
       padding: 30px 50px 30px 50px;
     }
 
-    p {
+    .inactive-button {
+      &:hover {
+        border-bottom: 0.75px solid rgba(60, 60, 60, 0.4);
+      }
+    }
+
+    button {
       text-align: center;
       font-size: 24px;
       font-weight: 300;
@@ -378,10 +384,10 @@
       padding: 16px 50px;
       cursor: pointer;
       margin: 0px 10px 0px 10px;
+      background-color: transparent;
+      border: none;
 
-      &:hover {
-        border: 0.75px solid $color-darkgrey;
-      }
+      &:focus {outline:0;}
     }
 
     a {
@@ -605,6 +611,7 @@
               border: 0.75px solid $color-darkgrey;
               padding: 13px 52px;
               cursor: pointer;
+              background-color: transparent;
             }
       
             a {
