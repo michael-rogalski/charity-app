@@ -1,5 +1,4 @@
 {
-  "homepage": "https://michael-rogalski.github.io/charity-app",
   "name": "charity-app",
   "version": "0.1.0",
   "private": true,
@@ -17,8 +16,6 @@
     "reset-css": "^5.0.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -40,7 +37,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0",
     "install-peers": "^1.0.3"
   }
 }
